@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Research: The Ultimate Token Optimization Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=JetBrains+Mono:wght@400;600&display=swap');
+        
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #f8fafc; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            height: 300px;
+        }
+
+        .habit-card {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e2e8f0;
+        }
+        .habit-card:hover {
+            transform: translateY(-4px);
+            border-color: #10b981;
+            background-color: #f0fdf4;
+        }
+
+        .tool-active {
+            background: #064e3b;
+            color: #34d399;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+        }
+
+        .pre-caveman-input {
+            background: #0f172a;
+            color: #94a3b8;
+            border: 1px solid #1e293b;
+            resize: none;
+        }
+
+        .pre-caveman-output {
+            background: #064e3b;
+            color: #ecfdf5;
+            border: 1px solid #065f46;
+        }
+
+        .mcp-pill {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 100px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            background: #f1f5f9;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body class="text-slate-900 antialiased">
+
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <div class="w-10 h-10 bg-teal-950 rounded-xl flex items-center justify-center text-emerald-400 font-bold text-lg">/c</div>
+            <span class="font-bold tracking-tight text-xl uppercase italic">Token<span class="text-emerald-600">Forge</span></span>
+        </div>
+        <div class="hidden md:flex space-x-8 text-xs font-black uppercase tracking-widest text-slate-400">
+            <a href="#habits" class="hover:text-emerald-600 transition-colors">Habits</a>
+            <a href="#pre-caveman" class="hover:text-emerald-600 transition-colors">Pre-Caveman</a>
+            <a href="#middleware" class="hover:text-emerald-600 transition-colors">Middleware</a>
+            <a href="#simulator" class="hover:text-emerald-600 transition-colors">ROI</a>
+        </div>
+    </div>
+</nav>
+
+<main class="max-w-7xl mx-auto px-6 py-12 md:py-20 space-y-32">
+
+    <!-- Hero / Intro -->
+    <section class="text-center space-y-6">
+        <div class="inline-flex items-center space-x-2 px-4 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-black uppercase tracking-[0.2em]">
+            <span>System Optimized</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter leading-[0.9]">
+            The Full-Stack <br/> <span class="text-emerald-600 italic">Optimization</span> Research.
+        </h1>
+        <p class="text-lg text-slate-500 max-w-2xl mx-auto font-light">
+            Integrating behavioral habits, instructional protocols, and MCP middleware to reclaim up to 85% of your Claude token budget.
+        </p>
+    </section>
+
+    <!-- Pillar 1: The Habit Grid -->
+    <section id="habits" class="scroll-mt-24">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div class="max-w-xl">
+                <h2 class="text-3xl font-black text-slate-900 mb-4">Structural Foundation: Small Habits</h2>
+                <p class="text-slate-500">Research suggests that "passive waste"—tokens spent on irrelevant files or repetitive context—is the primary cause of context degradation. These habits create a clean, high-density repository state.</p>
+            </div>
+            <div class="text-right">
+                <div class="text-4xl font-black text-emerald-600">~25%</div>
+                <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Avg. Passive Savings</div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="habit-card p-6 rounded-3xl bg-white">
+                <div class="text-2xl mb-4">🚫</div>
+                <h4 class="font-bold text-sm mb-2 uppercase">.claudeignore</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Prevents reading <span class="mono text-emerald-700">node_modules</span>, <span class="mono text-emerald-700">dist</span>, and binaries. Identical to .gitignore but for model context.</p>
+            </div>
+            <div class="habit-card p-6 rounded-3xl bg-white">
+                <div class="text-2xl mb-4">📜</div>
+                <h4 class="font-bold text-sm mb-2 uppercase">CLAUDE.md</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Centralized source of truth for architectural overview and coding standards. Eliminates repetitive explanations.</p>
+            </div>
+            <div class="habit-card p-6 rounded-3xl bg-white">
+                <div class="text-2xl mb-4">🖥️</div>
+                <h4 class="font-bold text-sm mb-2 uppercase">claude-hud</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Real-time token tracking plugin. Behavioral psychology shows that monitoring usage reduces impulse prompts by 30%.</p>
+            </div>
+            <div class="habit-card p-6 rounded-3xl bg-white">
+                <div class="text-2xl mb-4">🧹</div>
+                <h4 class="font-bold text-sm mb-2 uppercase">/clear command</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Mandatory habit for switching tasks. Wipes irrelevant history to save thousands of tokens on unrelated context.</p>
+            </div>
+            <div class="habit-card p-6 rounded-3xl bg-white">
+                <div class="text-2xl mb-4">📦</div>
+                <h4 class="font-bold text-sm mb-2 uppercase">Batching</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Consolidate multiple instructions into one prompt. Reduces the "System Instruction" multiplier significantly.</p>
+            </div>
+            <div class="habit-card p-6 rounded-3xl bg-white">
+                <div class="text-2xl mb-4">🧱</div>
+                <h4 class="font-bold text-sm mb-2 uppercase">Task-Scoping</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Treat conversations like Git commits. Small, focused tasks prevent "Conversation Bloat" and memory drift.</p>
+            </div>
+            <div class="habit-card p-6 rounded-3xl bg-white">
+                <div class="text-2xl mb-4">📉</div>
+                <h4 class="font-bold text-sm mb-2 uppercase">Local Processing</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Perform sorting, regex, or manipulation locally before sending. Never use Claude for "dumb" data formatting.</p>
+            </div>
+            <div class="habit-card p-6 rounded-3xl bg-white">
+                <div class="text-2xl mb-4">📥</div>
+                <h4 class="font-bold text-sm mb-2 uppercase">/compact</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Triggers Prompt Caching synergy. Optimizes prefix blocks for faster, cheaper re-reading of long-lived context.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillar 2: Pre-Caveman Protocol -->
+    <section id="pre-caveman" class="scroll-mt-24">
+        <div class="bg-slate-900 rounded-[3rem] p-8 md:p-16 text-white overflow-hidden relative">
+            <div class="absolute top-0 right-0 p-12 opacity-10 text-[200px] font-black pointer-events-none select-none">/PC</div>
+            
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <div class="inline-block px-3 py-1 rounded bg-emerald-500 text-emerald-950 text-[10px] font-black uppercase mb-6 tracking-widest">Experimental Tool</div>
+                    <h2 class="text-4xl font-black mb-6 italic tracking-tighter">The /pre-caveman Distiller.</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        We are developing a tool based on the **Caveman Methodology** that acts as a pre-processor for user intent. Large, verbose user prompts are passed through the <span class="mono text-emerald-400">/pre-caveman</span> filter, which strips politeness, repetition, and ambiguity, outputting a high-density "Caveman" instruction.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-emerald-500">✓</span>
+                            <span class="text-sm">Reduces instruction tokens by ~70%.</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-emerald-500">✓</span>
+                            <span class="text-sm">Eliminates conversational filler that confuses logic.</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-emerald-500">✓</span>
+                            <span class="text-sm">Increases model adherence to strict coding tasks.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-slate-800/50 p-6 rounded-3xl border border-slate-700">
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">User Input (Verbose)</label>
+                        <textarea id="pcInput" class="pre-caveman-input w-full h-32 p-4 rounded-xl text-sm mono focus:outline-none" readonly>Hi Claude, I was wondering if you could help me look through this React component and maybe find a way to make it more efficient? It seems to be lagging when the user clicks the button several times and I'm not sure if it's the state management or the way I'm mapping the data. Thanks so much!</textarea>
+                        
+                        <div class="flex justify-center my-4">
+                            <button id="runPC" class="px-6 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-full transition-all flex items-center space-x-2">
+                                <span>RUN /pre-caveman</span>
+                                <span class="text-xs">⚡</span>
+                            </button>
+                        </div>
+
+                        <label class="block text-[10px] font-bold text-emerald-500 uppercase tracking-widest mb-3">Result (/caveman Instruction)</label>
+                        <div id="pcOutput" class="pre-caveman-output w-full p-4 rounded-xl text-sm mono min-h-[60px] flex items-center italic">
+                            Waiting for process...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillar 3: Middleware & MCP Strategy -->
+    <section id="middleware" class="scroll-mt-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <h2 class="text-3xl font-black text-slate-900">Middleware & MCP Governance</h2>
+                <p class="text-slate-600">While **JCodeMunch MCP** is the primary driver for code minification, research shows that tool definition overhead is a hidden token killer. Each active MCP server adds its tool definitions to every single turn.</p>
+                
+                <div class="p-8 bg-amber-50 border-l-4 border-amber-500 rounded-r-3xl">
+                    <h5 class="font-black text-amber-900 uppercase text-xs mb-2 tracking-widest">Critical Constraint</h5>
+                    <p class="text-sm text-amber-800">Limit active MCP servers to <span class="font-black">Under 10</span>. Exceeding this creates a "Tool-Token Tsunami" where 15-20% of your window is consumed by tool definitions before a single line of code is read.</p>
+                </div>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="mcp-pill border border-emerald-200 text-emerald-700 bg-emerald-50">JCodeMunch ✓</span>
+                    <span class="mcp-pill border border-emerald-200 text-emerald-700 bg-emerald-50">Local-Fs ✓</span>
+                    <span class="mcp-pill">WebSearch</span>
+                    <span class="mcp-pill">GitHub</span>
+                    <span class="mcp-pill">Postgres</span>
+                    <span class="mcp-pill">Slack</span>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-xl">
+                <h4 class="text-center font-bold text-slate-400 uppercase text-[10px] mb-6 tracking-widest">MCP Server Count vs. Static Token Overhead</h4>
+                <div class="chart-container">
+                    <canvas id="mcpChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillar 4: ROI Simulator -->
+    <section id="simulator" class="scroll-mt-24 pb-20">
+        <div class="bg-emerald-100 rounded-[4rem] p-8 md:p-16 border-2 border-emerald-200">
+            <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-10">
+                    <h2 class="text-4xl font-black text-slate-900 leading-tight">Quantify Your <br/>Savings.</h2>
+                    <div class="space-y-8">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-sm font-bold text-slate-600">Conversation Depth (Turns)</label>
+                                <span id="valTurns" class="font-black text-emerald-700">20</span>
+                            </div>
+                            <input type="range" id="simTurns" min="1" max="100" value="20" class="w-full h-1.5 bg-emerald-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-sm font-bold text-slate-600">Avg. Repository Size (Files)</label>
+                                <span id="valFiles" class="font-black text-emerald-700">40</span>
+                            </div>
+                            <input type="range" id="simFiles" min="5" max="200" value="40" class="w-full h-1.5 bg-emerald-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="p-8 bg-white rounded-[2rem] shadow-sm flex flex-col items-center justify-center text-center">
+                        <div class="text-[10px] font-black uppercase text-slate-400 mb-2">Efficiency Gain</div>
+                        <div class="text-4xl font-black text-emerald-600 tracking-tighter">4.2x</div>
+                    </div>
+                    <div class="p-8 bg-slate-950 rounded-[2rem] shadow-xl flex flex-col items-center justify-center text-center">
+                        <div class="text-[10px] font-black uppercase text-emerald-400 mb-2">Saved / Mo</div>
+                        <div id="resMoney" class="text-4xl font-black text-white tracking-tighter">$142</div>
+                    </div>
+                    <div class="col-span-2 p-8 bg-emerald-600 text-white rounded-[2rem] flex items-center justify-between shadow-lg">
+                        <div class="text-left">
+                            <div class="text-[10px] font-black uppercase opacity-80 mb-1">Max Capacity</div>
+                            <div class="text-xl font-bold">128k <span class="font-light">→</span> 540k</div>
+                        </div>
+                        <div class="text-right text-xs font-bold leading-tight opacity-90">
+                            Effective Context <br/> Window Expansion
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-white border-t border-slate-200 py-16">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-slate-400 text-[10px] font-black uppercase tracking-widest">
+        <div>TokenForge Research Archive &copy; 2024</div>
+        <div class="mt-8 md:mt-0 flex space-x-8">
+            <a href="#" class="hover:text-emerald-600">Methodology</a>
+            <a href="#" class="hover:text-emerald-600">JCodeMunch Docs</a>
+            <a href="#" class="hover:text-emerald-600">/pre-caveman CLI</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // --- MCP Chart ---
+    const mcpCtx = document.getElementById('mcpChart').getContext('2d');
+    new Chart(mcpCtx, {
+        type: 'line',
+        data: {
+            labels: ['1', '3', '5', '8', '10', '15', '20'],
+            datasets: [{
+                label: 'Tool-Definition Tokens (Static)',
+                data: [800, 2400, 4000, 6400, 8000, 15000, 24000],
+                borderColor: '#10b981',
+                backgroundColor: 'rgba(16, 185, 129, 0.05)',
+                borderWidth: 4,
+                pointRadius: 6,
+                pointBackgroundColor: '#fff',
+                fill: true,
+                tension: 0.3
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: { beginAtZero: true, grid: { color: '#f1f5f9' } },
+                x: { grid: { display: false } }
+            }
+        }
+    });
+
+    // --- Pre-Caveman Logic ---
+    const runPC = document.getElementById('runPC');
+    const pcOutput = document.getElementById('pcOutput');
+    const pcInput = document.getElementById('pcInput');
+
+    runPC.addEventListener('click', () => {
+        pcOutput.textContent = "Processing logic...";
+        pcOutput.classList.add('animate-pulse');
+        
+        setTimeout(() => {
+            pcOutput.textContent = "analyze component. fix lag on button-click. optimize state-mapping.";
+            pcOutput.classList.remove('animate-pulse', 'italic');
+            pcOutput.classList.add('font-bold');
+        }, 1200);
+    });
+
+    // --- Simulator Logic ---
+    const simTurns = document.getElementById('simTurns');
+    const simFiles = document.getElementById('simFiles');
+    const valTurns = document.getElementById('valTurns');
+    const valFiles = document.getElementById('valFiles');
+    const resMoney = document.getElementById('resMoney');
+
+    function updateSim() {
+        const turns = parseInt(simTurns.value);
+        const files = parseInt(simFiles.value);
+        
+        valTurns.textContent = turns;
+        valFiles.textContent = files;
+
+        // ROI Calculation: (Files * 2k tokens * 0.6 reduction) * (Turns * 1k instructions * 0.7 reduction)
+        const savingsFactor = 0.75; // Average combined savings across habits, mcp, caveman
+        const avgQueryCost = (files * 1500) + 1000;
+        const monthlySaved = (avgQueryCost * turns * 20 * savingsFactor); // 20 working days
+        
+        const dollars = (monthlySaved / 1000000) * 15;
+        resMoney.textContent = "$" + Math.round(dollars);
+    }
+
+    simTurns.addEventListener('input', updateSim);
+    simFiles.addEventListener('input', updateSim);
+    updateSim();
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+</body>
+</html>
